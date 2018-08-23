@@ -8,12 +8,11 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.deston.poetry.R;
-import com.deston.poetry.utils.DeviceUtil;
 
 import java.util.List;
 
 /**
- * Created by liudatong on 2018/8/15
+ * Created by deston on 2018/8/15
  */
 public class DiscoveryGridAdapter extends RecyclerView.Adapter<DiscoveryGridAdapter.DiscoveryHolder> {
     private List<String> mData;

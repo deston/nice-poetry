@@ -1,5 +1,6 @@
 package com.deston.poetry.ui;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -14,9 +15,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.WindowManager;
 
 import com.deston.poetry.R;
 import com.deston.poetry.ui.fragment.DiscoveryFragment;
+import com.deston.poetry.ui.fragment.HomeFragment;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -28,6 +31,7 @@ public class HomeActivity extends AppCompatActivity
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
+                    toHome();
                     return true;
                 case R.id.navigation_discovery:
                     toDiscovery();
@@ -44,14 +48,6 @@ public class HomeActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -64,7 +60,9 @@ public class HomeActivity extends AppCompatActivity
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        toHome();
     }
+
 
     @Override
     public void onBackPressed() {
@@ -112,6 +110,6 @@ public class HomeActivity extends AppCompatActivity
         getSupportFragmentManager().beginTransaction().replace(R.id.content_layout, new DiscoveryFragment()).commit();
     }
     private void toHome() {
-
+        getSupportFragmentManager().beginTransaction().replace(R.id.content_layout, new HomeFragment()).commit();
     }
 }
