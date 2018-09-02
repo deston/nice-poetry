@@ -1,4 +1,4 @@
-package com.deston.poetry.ui;
+package com.deston.poetry.base;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;

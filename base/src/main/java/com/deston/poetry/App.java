@@ -10,8 +10,8 @@ public class App extends Application {
     private static Context mApplication;
     @Override
     public void onCreate() {
-        mApplication = this;
         super.onCreate();
+        mApplication = this;
     }
     public static Context getContext() {
         return mApplication;

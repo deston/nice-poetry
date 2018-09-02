@@ -1,11 +1,11 @@
-package com.deston.poetry.ui.card;
+package com.deston.poetry.home.card;
 
 import android.view.View;
 import android.widget.TextView;
 
 import com.deston.poetry.R;
-import com.deston.poetry.model.PoemCardModel;
-import com.deston.poetry.ui.ICardView;
+import com.deston.poetry.home.card.model.PoemCardModel;
+import com.deston.poetry.base.ICardView;
 
 public class PoemCardView implements ICardView<PoemCardModel> {
     private TextView mAuthorTv;

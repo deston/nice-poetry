@@ -1,7 +1,10 @@
-package com.deston.poetry.model;
+package com.deston.poetry.home.card.model;
 
-import com.deston.poetry.ui.CardTypes;
+import android.support.annotation.Keep;
 
+import com.deston.poetry.base.CardTypes;
+import com.deston.poetry.model.CardModel;
+@Keep
 public class PoemCardModel extends CardModel {
     public String title;
     public String author;
